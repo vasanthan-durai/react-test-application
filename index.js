@@ -59,6 +59,8 @@ alert(name + " "+age);
         name='age'
         onChange={this.textchangeevent}
       />
+      <br/>
+      <br/>
      <input type='submit' />
       </form>
       </div>
