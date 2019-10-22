@@ -4,23 +4,57 @@ import Hello from './Hello';
 import './style.css';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      name: 'React'
+     username:'',
+     age:null,
     };
+  }
+
+SubmitHandler=()=>{
+debugger;
+let name =this.state.username;
+let age=this.state.age;
+if(!Number(age))
+{
+alert("should be a number");
+}
+alert(name + " "+age);
+
+}
+  
+  textchangeevent=(event)=>{
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.setState({[nam]: val});
   }
 
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+      <form onSubmit={this.SubmitHandler}>
+      
+     <h1>Hello {this.state.username} {this.state.age}</h1>
+      <p>Enter your name:</p>
+      <input
+        type='text'
+        name='username'
+        onChange={this.textchangeevent}
+      />
+      <p>Enter your age:</p>
+      <input
+        type='text'
+        name='age'
+        onChange={this.textchangeevent}
+      />
+     <input type='submit' />
+      </form>
       </div>
     );
   }
 }
+
+
 
 render(<App />, document.getElementById('root'));
