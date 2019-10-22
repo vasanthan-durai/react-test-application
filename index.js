@@ -11,6 +11,7 @@ class App extends Component {
      age:null,
     };
   }
+ 
 
 SubmitHandler=()=>{
 debugger;
@@ -31,8 +32,18 @@ alert(name + " "+age);
   }
 
   render() {
+
+ const mystyle = {
+      color: "white",
+      backgroundColor: "DodgerBlue",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+
     return (
-      <div>
+
+      
+      <div style={mystyle}>
       <form onSubmit={this.SubmitHandler}>
       
      <h1>Hello {this.state.username} {this.state.age}</h1>
